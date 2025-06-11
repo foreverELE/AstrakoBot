@@ -216,19 +216,23 @@ def start(update: Update, context: CallbackContext):
     reply_markup=InlineKeyboardMarkup(
         [
             [
+                InlineKeyboardButton("🎉 导航官网", url="https://bite321.com"),
+            ],
+            [
                 InlineKeyboardButton("📢 加入官方社群", url="https://t.me/bite321_academy"),
             ],
             [
+                InlineKeyboardButton("🔗 学院官网", url="https://learn.bite321.com"),
                 InlineKeyboardButton("✨ 精选推荐", url="https://learn.bite321.com/tag/recommendations/"),
-                InlineKeyboardButton("🧭 实操指南", url="https://learn.bite321.com/tag/hands-on-guides/")
             ],
             [
                 InlineKeyboardButton("🪙 加密货币", url="https://learn.bite321.com/tag/cryptocurrency/"),
                 InlineKeyboardButton("📘 区块链", url="https://learn.bite321.com/tag/blockchain/")
             ],
             [
+                InlineKeyboardButton("🧭 实操指南", url="https://learn.bite321.com/tag/hands-on-guides/"),
                 InlineKeyboardButton("🌌 黑暗森林", url="https://learn.bite321.com/tag/security/"),
-                InlineKeyboardButton("🌐 导航官网", url="https://bite321.com")
+                
             ]
         ]
     )
