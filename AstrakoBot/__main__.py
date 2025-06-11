@@ -206,11 +206,10 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
-    "https://cdn.bite321.com/images/bite321_bot_start.jpg",  # 替换为你的封面图 URL
+            update.effective_message.reply_text(
     "👋 Hi {}, 欢迎使用 *BITE321 AI 小助手*！\n\n"
-    "我可以帮你快速了解 Web3、区块链与加密资产世界。\n"
-    "点击下方按钮访问学院内容、导航官网，或加入官方社群！".format(
+    "我可以帮助你快速了解 Web3、区块链与加密资产世界。\n"
+    "点击下方按钮访问教程、导航或加入官方社群 👇".format(
         escape_markdown(first_name)
     ),
     parse_mode=ParseMode.MARKDOWN,
