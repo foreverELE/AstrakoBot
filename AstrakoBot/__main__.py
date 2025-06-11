@@ -207,8 +207,8 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-    "👋 Hi {}, 我是 *BITE321 AI 小助理* 🤖\n"
-    "欢迎来到 Web3 世界！\n\n"
+    "👋 Hi {}, 我是 *BITE321 AI 小助理* 🤖\n\n"
+    "欢迎来到 Web3 世界！\n"
     "我可以帮助你快速入门区块链和加密资产，带你了解 Web3 的必备工具与应用。\n\n"
     "📚 点击下方按钮，立即开始学习、探索，或加入官方社群 👇".format(
         escape_markdown(first_name)
