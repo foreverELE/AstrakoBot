@@ -207,48 +207,34 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                ASTRAKOBOT_IMG,
-                PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name)
-                ),
-                parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="Add AstrakoBot to your group",
-                                url="t.me/{}?startgroup=true".format(
-                                    context.bot.username
-                                ),
-                            )
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Support Group",
-                                url=f"https://t.me/AstrakoBotSupport",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Getting started guide",
-                                url="https://t.me/OnePunchUpdates/29",
-                            )
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Source code",
-                                url="https://github.com/Astrako/AstrakoBot",
-                            )
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="Recommended federation",
-                                url="https://t.me/ALTF4Fed",
-                            )
-                        ],
-                    ]
-                ),
-            )
+    "https://cdn.bite321.com/images/bite321_bot_start.jpg",  # 替换为你的封面图 URL
+    "👋 Hi {}, 欢迎使用 *BITE321 AI 小助手*！\n\n"
+    "我可以帮你快速了解 Web3、区块链与加密资产世界。\n"
+    "点击下方按钮访问学院内容、导航官网，或加入官方社群！".format(
+        escape_markdown(first_name)
+    ),
+    parse_mode=ParseMode.MARKDOWN,
+    reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("📢 加入官方社群", url="https://t.me/bite321_academy"),
+            ],
+            [
+                InlineKeyboardButton("✨ 精选推荐", url="https://learn.bite321.com/tag/recommendations/"),
+                InlineKeyboardButton("🧭 实操指南", url="https://learn.bite321.com/tag/hands-on-guides/")
+            ],
+            [
+                InlineKeyboardButton("🪙 加密货币", url="https://learn.bite321.com/tag/cryptocurrency/"),
+                InlineKeyboardButton("📘 区块链", url="https://learn.bite321.com/tag/blockchain/")
+            ],
+            [
+                InlineKeyboardButton("🌌 黑暗森林", url="https://learn.bite321.com/tag/security/"),
+                InlineKeyboardButton("🌐 导航官网", url="https://bite321.com")
+            ]
+        ]
+    )
+)
+
     else:
         try:
             update.effective_message.reply_text(
