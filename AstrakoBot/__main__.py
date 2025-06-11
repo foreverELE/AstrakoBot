@@ -207,9 +207,10 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-    "👋 Hi {}, 欢迎使用 *BITE321 AI 小助手*！\n\n"
-    "我可以帮助你快速了解 Web3、区块链与加密资产世界。\n"
-    "点击下方按钮访问教程、导航或加入官方社群 👇".format(
+    "👋 Hi {}, 我是 *BITE321 AI 小助理* 🤖\n"
+    "欢迎来到 Web3 世界！\n\n"
+    "我可以帮助你快速入门区块链和加密资产，带你了解 Web3 的必备工具与应用。\n\n"
+    "📚 点击下方按钮，立即开始学习、探索，或加入官方社群 👇".format(
         escape_markdown(first_name)
     ),
     parse_mode=ParseMode.MARKDOWN,
