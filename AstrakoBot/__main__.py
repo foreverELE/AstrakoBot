@@ -593,7 +593,7 @@ def custom_help(update: Update, context: CallbackContext):
     "🔗 导航：快速访问必备 Web3 应用\n"
     "📗 学院：系统学习区块链与加密知识\n"
     "🪙 买币：新手买币教程一步搞定\n"
-    "✨ 比特币：了解什么是BTC与数字货币\n"
+    "✨ 比特币：了解什么是 BTC 与数字货币\n"
     "🚀 入门：零基础也能看懂的 Web3 指南\n"
     "📌 推荐：bite321精选的实用内容合集\n\n"
     "欢迎一起探索 Web3 世界！🌍",

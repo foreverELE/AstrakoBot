@@ -23,30 +23,43 @@ def keyword_handler(update: Update, context: CallbackContext):
             parse_mode=ParseMode.HTML
         )
         return
+
     elif "学院" in text or "入门" in text:
         update.message.reply_text(
-            "📗 bite321学院：https://learn.bite321.com/",
+            "📗 bite321 学院首页\n👉 https://learn.bite321.com/\n\n"
+            "🗺️ BITE321 指南 - 从零开始学习 Web3\n👉 https://learn.bite321.com/reading-guide/",
             parse_mode=ParseMode.HTML
         )
         return
-    elif "怎么买币" in text or "买币" in text:
+
+    elif "买币" in text:
         update.message.reply_text(
-            "🪙 新手买币教程：https://learn.bite321.com/how-to-register-okx/",
+            "🪙 拥有你的第「1」枚比特币（BTC）\n👉 https://learn.bite321.com/buy-your-first-bitcoin/\n\n"
+            "💡 通过 bite321 快速注册你的欧易 OKX 账户\n👉 https://learn.bite321.com/how-to-register-okx/",
             parse_mode=ParseMode.HTML
         )
         return
+
     elif "比特币" in text:
         update.message.reply_text(
-            "✨ 比特币（BTC）：数字时代的'黄金'：https://learn.bite321.com/what-is-bitcoin/",
+            "📖 一文读懂加密货币：从比特币到数字资产\n👉 https://learn.bite321.com/cryptocurrency-the-future-of-digital-finance/\n\n"
+            "📘 比特币（BTC）：数字时代的“黄金”\n👉 https://learn.bite321.com/what-is-bitcoin/",
             parse_mode=ParseMode.HTML
         )
         return
+
     elif "推荐" in text:
         update.message.reply_text(
-            "✨ 精选推荐：https://learn.bite321.com/tag/recommendations/",
+            "📌 精选推荐合集：\n👉 https://learn.bite321.com/tag/recommendations/",
             parse_mode=ParseMode.HTML
         )
         return
+
+    else:
+        update.message.reply_text(
+            "🤖 暂时不理解你的问题，可以发送关键词如：导航 / 学院 / 买币 / 比特币 / 推荐",
+            parse_mode=ParseMode.HTML
+        )
 
 __help__ = """
 智能关键词回复功能：
