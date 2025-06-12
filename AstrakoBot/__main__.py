@@ -587,7 +587,7 @@ def migrate_chats(update: Update, context: CallbackContext):
     raise DispatcherHandlerStop
 
 def custom_help(update: Update, context: CallbackContext):
-    update.message.reply_text = (
+    update.message.reply_text(
     "👋 Hi，我是你的 *Web3 AI 小助理* 🤖\n\n"
     "你可以发送以下关键词，我会自动回复你需要的信息：\n\n"
     "🔗 导航\n"
@@ -598,6 +598,7 @@ def custom_help(update: Update, context: CallbackContext):
     "📌 推荐\n\n"
     "欢迎探索 Web3 世界！"
 )
+
 
 
 def main():
