@@ -5,7 +5,6 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, MessageHandler, Filters
 
 from AstrakoBot import dispatcher
-from AstrakoBot.modules.disable import DisableAbleCommandHandler
 
 def keyword_handler(update: Update, context: CallbackContext):
     # 检查消息是否存在
@@ -15,16 +14,12 @@ def keyword_handler(update: Update, context: CallbackContext):
     text = update.message.text.strip().lower()
     chat = update.effective_chat
     
-    # 只在群组中响应，避免私聊冲突
-    if chat.type == "private":
-        return
-    
     # 添加调试日志
-    print(f"[KEYWORD] 收到消息: {text}")
+    print(f"[KEYWORD] 聊天类型: {chat.type}, 收到消息: {text}")
     
     if "官网" in text or "导航" in text:
         update.message.reply_text(
-            "🔗 我们的官网是：https://bite321.com",
+            "🚀 bite321，你的 Web3 从这里开始\n🔗 https://bite321.com",
             parse_mode=ParseMode.HTML
         )
         return
@@ -42,7 +37,7 @@ def keyword_handler(update: Update, context: CallbackContext):
         return
     elif "比特币" in text:
         update.message.reply_text(
-            "✨ 比特币（BTC）：数字时代的‘黄金’：https://learn.bite321.com/what-is-bitcoin/",
+            "✨ 比特币（BTC）：数字时代的"黄金"：https://learn.bite321.com/what-is-bitcoin/",
             parse_mode=ParseMode.HTML
         )
         return
@@ -62,12 +57,12 @@ __help__ = """
 - 输入 "比特币"：获取比特币介绍
 - 输入 "推荐"：获取精选内容
 
-*注意：仅在群组中生效*
+*支持群聊和私聊*
 """
 
-# 创建处理器
+# 修改过滤器：移除群组限制，支持私聊和群聊
 KEYWORD_HANDLER = MessageHandler(
-    Filters.text & ~Filters.command & Filters.chat_type.groups,
+    Filters.text & ~Filters.command,  # 移除了 Filters.chat_type.groups
     keyword_handler
 )
 
