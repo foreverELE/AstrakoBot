@@ -23,7 +23,7 @@ def keyword_handler(update: Update, context: CallbackContext):
         update.message.reply_text("🤖 暂时不理解你的问题，可以输入关键词如：官网 / 白皮书 / 买币 / 推荐")
 
 # 注册为 handler
-KEYWORD_HANDLER = MessageHandler(filters.TEXT & ~filters.COMMAND, keyword_handler)
+KEYWORD_HANDLER = MessageHandler(filters.TEXT & (~filters.COMMAND), keyword_handler)
 
 __mod_name__ = "KeywordReply"
 __handlers__ = [KEYWORD_HANDLER]
