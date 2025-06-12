@@ -37,7 +37,7 @@ def keyword_handler(update: Update, context: CallbackContext):
         return
     elif "比特币" in text:
         update.message.reply_text(
-            "✨ 比特币（BTC）：数字时代的"黄金"：https://learn.bite321.com/what-is-bitcoin/",
+            "✨ 比特币（BTC）：数字时代的'黄金'：https://learn.bite321.com/what-is-bitcoin/",
             parse_mode=ParseMode.HTML
         )
         return
