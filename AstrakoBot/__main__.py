@@ -586,11 +586,16 @@ def migrate_chats(update: Update, context: CallbackContext):
     LOGGER.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
+def custom_help(update: Update, context: CallbackContext):
+    update.message.reply_text("🤖 你好！我是你的 Web3 小助手。\n\n你可以发送关键词如：导航 / 学院 / 比特币 / 入门 / 买币，我会自动回复你需要的信息！")
+
 
 def main():
     start_handler = CommandHandler("start", start, run_async=True)
 
-    help_handler = CommandHandler("help", get_help, run_async=True)
+    # help_handler = CommandHandler("help", get_help, run_async=True)
+    help_handler = CommandHandler("help", custom_help, run_async=True)
+
     help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*", run_async=True)
 
     settings_handler = CommandHandler("settings", get_settings, run_async=True)
