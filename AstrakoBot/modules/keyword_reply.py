@@ -55,12 +55,6 @@ def keyword_handler(update: Update, context: CallbackContext):
         )
         return
 
-    else:
-        update.message.reply_text(
-            "🤖 暂时不理解你的问题，可以发送关键词如：导航 / 学院 / 买币 / 比特币 / 推荐",
-            parse_mode=ParseMode.HTML
-        )
-
 __help__ = """
 智能关键词回复功能：
 
